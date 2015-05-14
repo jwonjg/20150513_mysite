@@ -34,7 +34,7 @@ public class UserInfoAction implements Action {
 			session.setAttribute("authUser", vo);
 		}
 		
-		response.sendRedirect("/mysite/user?a=uinfosuccess");
+		response.sendRedirect("user?a=uinfosuccess");
 	}
 
 }

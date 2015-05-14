@@ -6,7 +6,7 @@
 <head>
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link href="/mysite/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+<link href="assets/css/guestbook.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -15,12 +15,19 @@
 		</div>
 		<div id="content">
 			<div id="guestbook">
-				<form action="board" method="post">
-					<input type="hidden" name="a" value="update">
+				<form action="board?a=update" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="boardNo" value="${ requestScope.board.no }">
 					<table>
 						<tr>
 							<td>제목</td><td><input name="title" value="${ requestScope.board.title }"></td>
+						</tr>
+						<tr>
+							<td>첨부파일</td>
+							<td>
+							${ requestScope.board.fileName }<br>
+							<input type="hidden" name="prevFileName" value="${ requestScope.board.fileName }">
+							<input type="file" name="fileName"> 
+							</td>
 						</tr>
 						<tr>
 							<td colspan=2><textarea name="content" id="content">${ requestScope.board.content }</textarea></td>

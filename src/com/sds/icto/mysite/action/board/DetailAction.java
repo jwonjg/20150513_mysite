@@ -24,6 +24,7 @@ public class DetailAction implements Action {
 		BoardDao dao = new BoardDao();
 		BoardVo board = dao.selectBoard(no);
 		
+		dao.updateClicks(no);
 
 		CommentDao cdao = new CommentDao();
 		List<CommentVo> commentList = cdao.commentList(no);

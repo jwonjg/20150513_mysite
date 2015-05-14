@@ -6,7 +6,7 @@
 <head>
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link href="/mysite/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+<link href="assets/css/guestbook.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -23,7 +23,13 @@
 						<td>작성자</td><td>${ requestScope.board.userName }</td>
 					</tr>
 					<tr>
+						<td>조회수</td><td>${ requestScope.board.clicks }</td>
+					</tr>
+					<tr>
 						<td>작성일</td><td>${ requestScope.board.regDate }</td>
+					</tr>
+					<tr>
+						<td>첨부파일</td><td><a href="files/${ requestScope.board.fileName }">${ requestScope.board.fileName }</a></td>
 					</tr>
 					<tr>
 						<td colspan=2>${ requestScope.board.content }</td>
@@ -40,6 +46,7 @@
 							<form action="board" method="post">
 								<input type="submit" value="삭제">
 								<input type="hidden" name="a" value="delete">
+								<input type="hidden" name="fileName" value="${ requestScope.board.fileName }">
 								<input type="hidden" name="no" value="${ requestScope.board.no }">
 							</form>
 						</td>

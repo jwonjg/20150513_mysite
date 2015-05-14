@@ -24,11 +24,11 @@ public class LoginAction implements Action {
 		MemberDao dao = new MemberDao();
 		MemberVo authUser = dao.getMember(email, password);
 		if(authUser == null) {
-			response.sendRedirect("/mysite/user?a=loginform&result=fail");
+			response.sendRedirect("user?a=loginform&result=fail");
 		}else{
 			HttpSession session = request.getSession(true);
 			session.setAttribute("authUser", authUser);
-			response.sendRedirect("/mysite");
+			response.sendRedirect("main");
 		}
 	}
 

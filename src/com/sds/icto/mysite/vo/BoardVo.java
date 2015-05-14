@@ -5,26 +5,31 @@ public class BoardVo {
 	private int userNo;
 	private String title;
 	private String content;
+	private String fileName;
+	private int clicks;
 	private String regDate;
 	
 	private String userName;
 
 	public BoardVo() {}
 
-	public BoardVo(int userNo, String title, String content) {
+	public BoardVo(int userNo, String title, String content, String fileName) {
 		super();
 		this.userNo = userNo;
 		this.title = title;
 		this.content = content;
+		this.fileName = fileName;
 	}
 
 	public BoardVo(int no, int userNo, String title, String content,
-			String regDate, String userName) {
+			String fileName, int clicks, String regDate, String userName) {
 		super();
 		this.no = no;
 		this.userNo = userNo;
 		this.title = title;
 		this.content = content;
+		this.fileName = fileName;
+		this.clicks = clicks;
 		this.regDate = regDate;
 		this.userName = userName;
 	}
@@ -76,6 +81,21 @@ public class BoardVo {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public int getClicks() {
+		return clicks;
+	}
+
+	public void setClicks(int clicks) {
+		this.clicks = clicks;
+	}
 	
 }

@@ -21,7 +21,7 @@ public class LoginOutAction implements Action {
 		if(session != null){
 			session.invalidate();
 		}
-		response.sendRedirect("/mysite");
+		response.sendRedirect("main");
 	}
 
 }

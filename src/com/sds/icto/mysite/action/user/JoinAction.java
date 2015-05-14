@@ -27,7 +27,7 @@ public class JoinAction implements Action {
 		MemberDao dao = new MemberDao();
 		dao.insert(vo);
 		
-		response.sendRedirect("/mysite/user?a=joinsuccess");
+		response.sendRedirect("user?a=joinsuccess");
 //		request.getRequestDispatcher("views/user/joinform.jsp").forward(request, response); 새로고침했을때 데이터베이스에 같은 정보가 입력됨
 	}
 

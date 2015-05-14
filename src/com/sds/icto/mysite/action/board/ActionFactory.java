@@ -30,6 +30,8 @@ public class ActionFactory {
 			a = new CommentAction();
 		}else if("deleteComment".equals(action)){
 			a = new DeleteCommentAction();
+		}else if("search".equals(action)){
+			a = new SearchAction();
 		}else{
 			a = new ListAction();
 		}

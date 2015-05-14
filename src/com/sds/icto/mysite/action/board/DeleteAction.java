@@ -1,5 +1,6 @@
 package com.sds.icto.mysite.action.board;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -18,10 +19,16 @@ public class DeleteAction implements Action {
 			throws ClassNotFoundException, SQLException, ServletException,
 			IOException {
 		int no = Integer.parseInt(request.getParameter("no"));
+		String fileName = request.getParameter("fileName");
 		MemberVo authUser = (MemberVo)request.getSession().getAttribute("authUser");
 		
 		BoardDao dao = new BoardDao();
 		dao.delete(no, authUser.getNo());
+		
+
+		String saveDir = "files";
+		String saveFullDir = request.getServletContext().getRealPath(saveDir);
+		if(fileName != null) new File(saveFullDir+"/"+fileName).delete();
 		
 		response.sendRedirect("board");
 	}

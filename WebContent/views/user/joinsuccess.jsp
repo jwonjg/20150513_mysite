@@ -5,7 +5,7 @@
 <head>
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link href="/mysite/assets/css/user.css" rel="stylesheet" type="text/css">
+<link href="assets/css/user.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -22,7 +22,7 @@
 						<c:otherwise>
 							회원가입을 축하합니다.
 							<br><br>
-							<a href="/mysite/user?a=loginform">로그인하기</a>
+							<a href="user?a=loginform">로그인하기</a>
 						</c:otherwise>
 					</c:choose>
 				</p>				
